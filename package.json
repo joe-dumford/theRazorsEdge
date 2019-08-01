@@ -1,0 +1,24 @@
+{
+  "name": "therazorsedge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joe-dumford/theRazorsEdge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joe-dumford/theRazorsEdge/issues"
+  },
+  "homepage": "https://github.com/joe-dumford/theRazorsEdge#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.0"
+  }
+}
