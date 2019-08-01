@@ -21,7 +21,9 @@ const app = express();
 app.use(logger("dev"));
 
 //Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(express.json());
 
 //Make public a static folder
@@ -29,7 +31,9 @@ app.use(express.static("public"));
 
 //If Deployed use Deployed DB. Otherwide use local Mongo DB
 let MONGOD_URI = process.env.MONGOD_URI || "mongodb://localhost:27017/razorsHeadlines";
-mongoose.connect(MONGOD_URI, { useNewUrlParse: true});
+mongoose.connect(MONGOD_URI, {
+    useNewUrlParse: true
+});
 
 //=================================ROUTES===========================================
 const assetsPath = path.join(__dirname, '../public');
@@ -38,13 +42,13 @@ app.use(express.static('assetsPath'));
 //A GET route for scraping the GuitarWorld Website
 app.get("/", function (req, res) {
 
-    axios.get("https://www.guitarworld.com/artists/interviews").then(function(response) {
-//Loading response into Cheerio & save it to a var to make a "shorthand selector"
+    axios.get("https://www.guitarworld.com/artists/interviews").then(function (response) {
+        //Loading response into Cheerio & save it to a var to make a "shorthand selector"
         var $ = cheerio.load(response.data);
         //Grabbing Articles by listingResult class tag
-        $(".listingResult").each(function (i, element){
-        //Add text & href of every link. Save them as properties
-        //Then create a new Article from result object
+        $(".listingResult").each(function (i, element) {
+            //Add text & href of every link. Save them as properties
+            //Then create a new Article from result object
             let newArticle = new Article({
                 title: $(this).children("a").text(),
                 link: $(this).children("a").attr("href"),
@@ -57,9 +61,9 @@ app.get("/", function (req, res) {
 });
 
 //Route for getting all Articles from the DB
-app.get("/articles", (req,res) => {
+app.get("/articles", (req, res) => {
     //Grab every document in the Articles collection
-    db.Article.find({}) 
+    db.Article.find({})
         .then((dbArticle) => {
             res.send(dbArticle); //If success, send Articles back to client
             console.log(res);
@@ -73,15 +77,15 @@ app.get("/articles", (req,res) => {
 app.get("/articles/:id", (req, res) => {
     //Using id passed in to prepare a query that finds the matching one in DB
     db.Article.findOne({
-        _id: req.params.id
-    })
-    .populate("note") //populate the notes associated with it
-    .then((dbArticle) => {
-        res.json(dbArticle) //If successful send Article w/ that id back to client
-    })
-    .catch((err) => {
-        res.json(err);
-    });
+            _id: req.params.id
+        })
+        .populate("note") //populate the notes associated with it
+        .then((dbArticle) => {
+            res.json(dbArticle) //If successful send Article w/ that id back to client
+        })
+        .catch((err) => {
+            res.json(err);
+        });
 });
 
 //Route for saving & updating an Article's associated Note
@@ -111,6 +115,3 @@ app.post("/articles/:id", (req, res) => {
 app.listen(PORT, () => {
     console.log("I'm listening on port " + PORT);
 });
-
-
-

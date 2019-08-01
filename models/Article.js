@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 let ArticleSchema = new Schema({
     title: {
         type: String,
-        required: false 
+        required: false
     },
     link: {
         type: String,
@@ -19,4 +19,4 @@ let ArticleSchema = new Schema({
     }
 });
 
-module.exports =  mongoose.model("Article", ArticleSchema);
+module.exports = mongoose.model("Article", ArticleSchema);
