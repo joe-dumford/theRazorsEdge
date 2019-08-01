@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GuitarWorld Scrapper</title>
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9159e94363.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4"><i id="gTar1" class="fas fa-guitar"></i>Guitar Scraper <i id="gTar2"
+                    class="fas fa-guitar"></i></h1>
+            <p class="lead">Get the latest interviews from your favorite artists. Just hit the button and grab them
+                all from GuitarWorld!</p>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <header class="header"></header>
+        <main class="main">
+            <div id="articles"></div>
+        </main>
+        <sidebar class="sidebar">
+            <form>
+                <button class="btn-lg" id="scrapeButton" type="submit"><i class="fas fa-skull"></i>Scrape Away!</button>
+            </form>
+            <ul id="myArticles"></ul>
+            <div id="notes"></div>
+        </sidebar>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <!-- My Github -->
+        <a class="waves-effect waves-light btn social github"
+            onclick="window.location.href='http://github.com/joe-dumford/newScrape'">
+            <i class="fab fa-github-square"></i></a>
+        <!-- My Linkedin  -->
+        <a class="waves-effect waves-light btn social linkedin"
+            onclick="window.location.href='https://www.linkedin.com/in/joe-dumford/'">
+            <i class="fab fa-linkedin"></i></a>
+        <!-- My Twitter -->
+        <a class="waves-effect waves-light btn social twitter"
+            onclick="window.location.href='https://twitter.com/a_dumford'">
+            <i class="fab fa-twitter-square"></i></a>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+
+
+</body>
