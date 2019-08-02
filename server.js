@@ -31,7 +31,7 @@ app.use(express.static("public"));
 
 //If Deployed use Deployed DB. Otherwide use local Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/razorsHeadlines";
-mongoose.connect(MONGODB_URI, { useNewUrlParse: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 //=================================ROUTES===========================================
 const assetsPath = path.join(__dirname, '../public');
