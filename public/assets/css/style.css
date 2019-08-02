@@ -1,0 +1,86 @@
+body {
+    background-image: url("../images/image1.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* position: relative; */
+}
+
+.jumbotron-fluid {
+    background-color: rgba(44, 7, 79, 0.952);
+    border-bottom: 4px solid rgb(184, 102, 2);
+
+}
+
+h1,
+.lead {
+    text-align: center;
+    color: rgb(184, 102, 2);
+}
+/*====Icons====*/
+#gTar1 {
+    padding: 12px;
+    transform: rotate(275deg);
+    color: rgba(184, 135, 11, 0.893);
+}
+
+#gTar2 {
+    color: rgba(184, 135, 11, 0.893);
+}
+
+.fas {
+    color: black;
+    margin-right: 5px;
+}
+.fab {
+    color: lightskyblue;
+}
+/*==============*/
+
+main {
+    grid-area: main;
+}
+
+#scrapeButton {
+    margin-left: 10px;
+    background-color: rgba(165, 24, 24, 0.934);
+    color: salmon;
+    transition: 0.5s;
+}
+
+#scrapeButton:hover {
+    background-color: rgba(165, 24, 24, 0.817);
+    color: darksalmon;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    padding: 25px;
+}
+
+#myArticles {
+    margin-top: 10px;
+    background-color: rgba(84, 77, 77, 0.941);
+    border-style: inset;
+    border-color: rgba(165, 24, 24, 0.934);
+    color: blanchedalmond;
+}
+#myArticles:hover {
+    margin-top: 10px;
+    transition: 0.5s;
+    background-color: rgba(84, 77, 77, 0.941);
+    border-style: inset;
+    border-color: rgba(165, 24, 24, 0.934);
+    color: blanchedalmond;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(44, 7, 79);
+    border-top: 4px solid rgb(184, 102, 2);
+    text-align: center;
+    min-height: 40px;
+}

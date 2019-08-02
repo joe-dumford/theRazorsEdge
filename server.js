@@ -3,7 +3,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 //Our Scraping Tools
 const axios = require("axios");
-const cherrio = require("cheerio");
+const cheerio = require("cheerio");
 
 //Require all models from models directory
 const db = require("./models");
@@ -11,7 +11,7 @@ const path = require("path");
 const Article = require("./models/Article");
 const Note = require("./models/Note");
 
-const PORT = process.event.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 //Initialize Express
 const app = express();
@@ -30,10 +30,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //If Deployed use Deployed DB. Otherwide use local Mongo DB
-let MONGOD_URI = process.env.MONGOD_URI || "mongodb://localhost:27017/razorsHeadlines";
-mongoose.connect(MONGOD_URI, {
-    useNewUrlParse: true
-});
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/razorsHeadlines";
+mongoose.connect(MONGODB_URI, { useNewUrlParse: true });
 
 //=================================ROUTES===========================================
 const assetsPath = path.join(__dirname, '../public');
